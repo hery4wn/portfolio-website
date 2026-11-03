@@ -1,0 +1,71 @@
+/* Compact layouts share a breakpoint with the unpinned hero and photo albums. */
+@media (max-width: 1023px) {
+  :root { scroll-padding-top: 24px; }
+  .hero { padding-top: max(20px, env(safe-area-inset-top)); }
+  .hero-header {
+    position: relative;
+    inset: auto;
+    margin-inline: max(20px, env(safe-area-inset-left));
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .social-marks { gap: 8px; padding: 0; }
+  .social-marks a { width: 44px; height: 44px; }
+  .hero-copy { margin-top: 28px; padding-inline: 20px; }
+  .hero-copy > p { font-size: 17px; line-height: 1.6; max-width: 36ch; }
+  .hero-scene { width: 100%; max-width: 640px; align-self: center; }
+  .story-compact .scroll-world { inset-inline: 0; width: 100%; max-width: 640px; margin-inline: auto; }
+  .hero-note { width: 100%; padding: 22px 20px 28px; font-size: 17px; }
+  .hero-note small { letter-spacing: .18em; }
+  .reveal-control { padding: 12px 20px 0; align-self: flex-start; }
+  .reveal-toggle { min-height: 48px; }
+  /* A thumb-accessible menu remains available through the closing section. */
+  .section-nav {
+    position: fixed;
+    inset: auto max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) auto;
+    padding: 0;
+    height: auto;
+    width: auto;
+    z-index: 40;
+  }
+  .resume-studio {
+    padding: 64px clamp(20px, 5vw, 48px) 64px;
+    background: #4b1d1b;
+  }
+  .resume-studio-content { width: 100%; max-width: 620px; margin-inline: auto; }
+  .resume-studio-heading { margin-bottom: 36px; }
+  .resume-studio-heading h2 { font-size: clamp(48px, 8vw, 64px); }
+  .resume-studio-group > h3 { font-size: 29px; }
+  .resume-studio-list > li { grid-template-columns: 32px minmax(0, 1fr); gap: 16px; padding-bottom: 40px; }
+  .resume-list-mark { width: 32px; height: 32px; border-radius: 8px; }
+  .resume-studio-list > li::before { left: 15px; top: 32px; }
+  .resume-studio-list h4, .resume-studio-experience .experience-title { font-size: 21px; overflow-wrap: anywhere; }
+  .resume-studio-list li p:not(.resume-list-period), .resume-studio-experience summary > span:nth-child(2) { font-size: 16px; line-height: 1.65; }
+  .resume-studio-experience .experience-entry { padding-left: 32px; margin-left: 15px; padding-bottom: 38px; }
+  .resume-studio-experience summary::before { left: -37px; }
+  .resume-studio-tint { background: linear-gradient(90deg, #351716f0, #351716dc 65%, #351716ad); }
+  .resume-studio-blur { display: none; }
+  .resume-backdrop-sticky { height: 100svh; }
+  .resume-studio-content > .quiet-text-link { min-height: 48px; font-size: 16px; gap: 12px; }
+  .resume-studio-content > .quiet-text-link svg { flex-shrink: 0; }
+  .work-transition { height: 240px; min-height: 0; max-height: none; overflow: clip; }
+  .work-transition-title { left: clamp(20px, 5vw, 48px); top: 22%; right: 20px; }
+  .work-transition-title h2 { font-size: clamp(56px, 11vw, 80px); }
+  .work-transition-title p { font-size: 16px; max-width: 28ch; }
+  #pilihan-karya { scroll-margin-top: 0; }
+  :where(a,button,summary,select,[tabindex]) { scroll-margin-bottom: 88px; }
+  .utility-page { padding: 48px 20px 100px; }
+}
+
+@media (max-width: 374px) {
+  .hero-header { gap: 10px; }
+  .social-marks { width: 100%; justify-content: space-between; max-width: 240px; }
+  .hero-copy { margin-top: 22px; }
+  .hero-copy > p { font-size: 16px; }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .hero-copy > p { max-width: 48ch; }
+  .hero-scene { max-width: 540px; }
+}

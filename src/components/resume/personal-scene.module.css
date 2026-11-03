@@ -1,0 +1,58 @@
+.scene{position:relative;isolation:isolate;overflow:clip;background:#f4e8db;color:#4a1f20;padding:100px 7% 120px;scroll-margin-top:0}
+.scene::selection{background:#4a1f20;color:#f4e8db}
+.light{position:absolute;z-index:-1;pointer-events:none;inset:-18% -15%;background:linear-gradient(122deg,transparent 30%,#fff9ef 30%,#fff9ef 45%,transparent 45%);opacity:.65}
+.ribbon{position:absolute;z-index:-1;pointer-events:none;left:-19%;top:29%;width:65%;height:66%;background:#78352d;transform:rotate(-15deg);border-radius:0 100% 100% 0;box-shadow:20px 35px 70px #4a1f201b}
+.layout{max-width:1240px;margin:auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);column-gap:clamp(55px,8vw,125px);row-gap:50px;align-items:start}
+.heading{grid-column:1/-1;display:flex;align-items:end;justify-content:space-between;gap:32px;padding-bottom:30px;border-bottom:1px solid #4a1f2033}
+.heading h2{font:400 clamp(64px,7vw,96px)/1 'Hery Brush',cursive;letter-spacing:0;margin:0;text-wrap:balance}
+.heading h2 span{color:#a13726}.heading p{font-size:18px;line-height:1.55;max-width:29ch;margin:0 0 7px;color:#77564d}
+.portrait{min-width:0;scroll-margin-top:90px;padding:12px 0 0 12px;perspective:1100px}
+.card{position:relative;margin:0;aspect-ratio:3/4;width:100%;max-width:460px;border-radius:24px;transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transform-style:preserve-3d;transition:transform .35s cubic-bezier(.16,1,.3,1);box-shadow:0 28px 55px #38181740}
+.photo{position:absolute;inset:0;border-radius:inherit;overflow:hidden;background:#caa98f}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.photo::after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#2413118c)}
+.caption{position:absolute;bottom:22px;left:22px;right:22px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;background:#381817bd;color:#fff5ed;border:1px solid #fff5ed40;border-radius:16px;backdrop-filter:blur(12px);transform:translateZ(24px)}
+.caption h3{font:400 clamp(38px,4vw,55px)/1 'Hery Brush',cursive;margin:0 0 6px}.caption p{font-size:15px;line-height:1.4;margin:0}.signature{font:400 44px/1 'Hery Brush',cursive;opacity:.8}
+.story{padding-top:6px;min-width:0}.intro{font:400 clamp(36px,3.5vw,50px)/1.13 'Hery Brush',cursive;margin:0 0 32px}.intro span{color:#a13726}
+.item{border-bottom:1px solid #4a1f2033}.item:first-child{border-top:1px solid #4a1f2033}
+.item summary{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px;list-style:none;cursor:pointer;font-size:18px;font-weight:600;padding:17px 0}
+.item summary::-webkit-details-marker{display:none}.item summary:hover{color:#a13726}.plus{position:relative;flex:0 0 24px;width:24px;height:24px}.plus::before,.plus::after{content:'';position:absolute;width:12px;height:1.5px;left:6px;top:11px;background:currentColor}.plus::after{transform:rotate(90deg);transition:transform .2s ease}.item[open] .plus::after{transform:rotate(0)}
+.item>p{font-size:17px;line-height:1.7;color:#68453e;margin:0 30px 22px 0;max-width:60ch}
+.resumeLink{display:inline-flex;align-items:center;gap:22px;min-height:48px;margin-top:22px;color:inherit;font-size:17px;text-decoration:underline;text-underline-offset:6px}.resumeLink:hover{color:#a13726}
+.scene :focus-visible{outline:2px solid #a13726;outline-offset:6px}
+@media(min-width:1600px){.scene{padding-inline:max(7%,calc((100vw - 1240px)/2))}}
+@media(max-width:1000px){.scene{padding:80px 6% 90px}.layout{column-gap:40px;grid-template-columns:minmax(0,.85fr) minmax(0,1fr)}.caption{left:14px;right:14px;bottom:14px;padding:16px}.caption p{font-size:14px}.signature{display:none}.item summary{font-size:17px}.portrait{padding-left:0}}
+@media(max-width:700px){.scene{padding:64px 24px 72px}.layout{grid-template-columns:minmax(0,1fr);gap:36px}.heading{display:block;padding-bottom:24px}.heading h2{font-size:64px}.heading p{margin:18px 0 0;font-size:17px;max-width:29ch}.portrait{width:100%;max-width:370px;margin:0 auto;padding:0}.card{aspect-ratio:3/4}.caption h3{font-size:44px}.caption p{font-size:15px}.signature{display:block}.ribbon{top:230px;left:-45%;width:130%;height:410px}.story{padding-top:0}.intro{font-size:40px;margin-bottom:24px}.item summary{min-height:64px}.item>p{font-size:16px;margin-right:14px}.light{inset:-5% -50%}}
+@media(prefers-reduced-motion:reduce){.card,.plus::after{transition:none}}
+:global([data-motion=reduce]) .card{transform:none;transition:none}
+@media print{.scene{background:white;padding:30px;color:black}.light,.ribbon{display:none}.card{transform:none;box-shadow:none}.item>p{display:block}.layout{gap:25px}.caption{transform:none}}
+
+@media (max-width:1023px) {
+  .scene { padding: 64px clamp(20px,5vw,48px) 72px; scroll-margin-top: 0; }
+  .layout { grid-template-columns: minmax(0,1fr); gap: 32px; max-width: 620px; }
+  .heading { display: block; padding-bottom: 24px; }
+  .heading h2 { font-size: clamp(46px,9vw,68px); }
+  .heading p { font-size: 17px; margin: 16px 0 0; max-width: 32ch; }
+  .portrait { width: 100%; max-width: 420px; margin-inline: auto; padding: 0; }
+  .card { aspect-ratio: 3/4; transform: none; }
+  .caption { left: 12px; right: 12px; bottom: 12px; padding: 16px; border-radius: 12px; }
+  .caption h3 { font-size: clamp(34px,8vw,46px); }
+  .caption p { font-size: 15px; }
+  .signature { display: none; }
+  /* Confine the dark accent to the portrait so it never crosses reading text. */
+  .ribbon { display: none; }
+  .portrait::before {
+    content: '';
+    position: absolute;
+    inset: 22px -8px -12px 12px;
+    background: #78352d;
+    border-radius: 24px;
+    transform: rotate(-3deg);
+    z-index: -1;
+  }
+  .story { padding-top: 12px; }
+  .intro { font-size: clamp(34px,7vw,44px); margin-bottom: 24px; }
+  .item summary { font-size: 17px; min-height: 64px; }
+  .item > p { font-size: 16px; margin-right: 8px; }
+  .light { inset: -5% -50%; opacity: .4; }
+}

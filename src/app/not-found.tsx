@@ -1,0 +1,1 @@
+export default function NotFound() { return <main id="konten" tabIndex={-1} className="utility-page"><h1>Halaman belum ditemukan.</h1><p>Kembali ke perkenalan atau telusuri bagian karya.</p><a className="button primary" href="/#karya">Ke karya</a></main>; }

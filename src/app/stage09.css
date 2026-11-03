@@ -1,0 +1,13 @@
+/* One user-triggered raster reaction; no idle loop or new reading transition. */
+.contact-with-mascot .reading-inner{padding-right:260px}
+.mascot-greeting{position:absolute;top:0;right:0;width:200px;text-align:center;color:var(--paper)}
+.mascot-pose{width:180px;height:180px;margin-inline:auto;transform-origin:50% 85%;position:relative}
+.mascot-pose img{display:block;width:100%;height:100%;object-fit:contain}
+.mascot-pose img[hidden],.mascot-greeting [hidden]{display:none}
+.mascot-greet-button{min-height:44px;padding:8px 12px;background:transparent;border:0;color:inherit;font:600 17px Source Sans,Arial,sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:5px}
+.mascot-greet-button:hover{text-decoration-thickness:2px}
+.mascot-greet-button:focus-visible{outline-color:var(--paper)}
+.mascot-status{min-height:3em;font-size:15px;line-height:1.5;max-width:23ch;margin:8px auto 0}
+.mascot-fallback{position:absolute;inset:0;display:grid;place-items:center;font:500 32px Georgia,serif}
+@media(max-width:760px){.contact-with-mascot .reading-inner{padding-right:0}.mascot-greeting{position:relative;top:auto;right:auto;width:100%;max-width:380px;display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 24px;align-items:center;text-align:left;margin-top:32px}.mascot-pose{width:120px;height:120px;grid-row:1 / 3}.mascot-greet-button{justify-self:start;align-self:end}.mascot-status{align-self:start;margin:0;min-height:3em}}
+@media print{.mascot-greeting{display:none!important}.contact-with-mascot .reading-inner{padding-right:0}}

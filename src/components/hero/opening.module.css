@@ -1,0 +1,14 @@
+.opening{position:fixed;inset:0;z-index:1000;background:#381817;color:#f4e8db;display:grid;place-items:center;clip-path:inset(0);transition:clip-path 1.15s cubic-bezier(.76,0,.24,1)}
+.opening[data-phase=exit]{clip-path:inset(0 0 100% 0);pointer-events:none}
+.content{width:min(520px,calc(100% - 64px))}.name{font:400 clamp(62px,8vw,96px)/1.02 'Hery Brush',cursive;margin:0 0 48px}.meter>span{display:block;font-size:36px;font-variant-numeric:tabular-nums}.meter small{font-size:18px;margin-left:6px}.track{height:2px;background:#f4e8db35;margin-top:18px;overflow:hidden}.track i{display:block;height:100%;background:#f4e8db;transform-origin:left;transition:transform .3s ease}.note{font-size:16px;margin-top:22px;color:#e8cabb}.skip{position:absolute;bottom:32px;right:7%;min-height:48px;border:0;border-bottom:1px solid #f4e8db70;background:none;color:inherit;font:inherit;cursor:pointer}.skip:focus-visible{outline:2px solid #f4e8db;outline-offset:6px}
+/* Slowly moving studio light and small airborne highlights. */
+.atmosphere{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2;mask-image:linear-gradient(90deg,transparent 47%,#000 60%);mix-blend-mode:screen}
+.lightSweep{position:absolute;inset:-25% -15% -25% 48%;background:conic-gradient(from 180deg at 82% 0%,transparent 0deg,#ffc47516 12deg,#ffdba426 17deg,transparent 27deg);transform-origin:82% 0%;animation:studioLight 12s ease-in-out infinite alternate;animation-play-state:paused}
+.atmosphere i{position:absolute;width:3px;height:3px;border-radius:50%;background:#ffe4b9;box-shadow:0 0 7px 2px #ffb65d40;animation:studioDust 9s ease-in-out infinite;animation-play-state:paused}
+.atmosphere i:nth-child(3n){width:2px;height:2px}.atmosphere i:nth-child(4n){width:4px;height:4px}
+.atmosphere[data-running=true] i,.atmosphere[data-running=true] .lightSweep{animation-play-state:running}
+@keyframes studioLight{from{transform:rotate(-12deg);opacity:.4}to{transform:rotate(14deg);opacity:.85}}
+@keyframes studioDust{0%{transform:translate3d(0,18px,0);opacity:0}18%{opacity:.65}50%{transform:translate3d(22px,-18px,0);opacity:.9}82%{opacity:.5}100%{transform:translate3d(-8px,-65px,0);opacity:0}}
+@media(max-width:1023px){.atmosphere{inset:44% 0 10%;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}.lightSweep{left:0}.name{font-size:66px}}
+@media(prefers-reduced-motion:reduce){.opening{display:none}.atmosphere{display:none}}
+:global([data-motion=reduce]) .atmosphere{display:none}
